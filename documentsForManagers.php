@@ -2,6 +2,8 @@
 require "includes/db.php";
 $data2  = $_POST;
 
+// Это будут ссылки на сервер, внутренний или внешний
+
 if (isset($data2['post_docs']) ) {
 
     $user = R::dispense('forlvl2');

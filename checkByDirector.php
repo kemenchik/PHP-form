@@ -2,6 +2,8 @@
 
 require "includes/db.php";
 
+// Это будут ссылки на сервер, внутренний или внешний
+
 $query = R::getAll( 'SELECT * FROM forlvl3' );
 echo($query['text']);
 

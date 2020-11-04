@@ -2,6 +2,8 @@
 
 require "includes/db.php";
 
+// Это будут ссылки на сервер, внутренний или внешний
+
 $data2  = $_POST;
 $query = R::getAll( 'SELECT * FROM forlvl2' );
 foreach ($query as $item):?>
