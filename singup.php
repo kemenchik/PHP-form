@@ -1,7 +1,10 @@
 <?php
 require "includes/db.php";
  $data  = $_POST;
- if(isset($data['do_signup']) )
+
+
+
+ if(isset($data['do_signup']))
  {
      //register
      $errors = array();
@@ -31,13 +34,17 @@ require "includes/db.php";
      }
      if(empty($errors))
      {
+
          //проверка на поля прошла
          //регистрируем
+
          $user = R::dispense('users');
          $user -> login = $data['login'];
          $user -> email = $data['email'];
          $user -> password = password_hash($data['pass'], PASSWORD_DEFAULT);
-         R::store($user);echo '<div style="color:green;">Вы зарегистрировались<br>
+         $user -> lvl = $data['lvl_select'];
+         R::store($user);
+         echo '<div style="color:green;">Вы зарегистрировались<br>
          Можете перейти на <a href="/">главную</a> страницу</div><hr>';
      }
 else
@@ -45,9 +52,9 @@ else
         //ошибка
          echo '<div style="color:red;">'.array_shift($errors).'</div><hr>';
      }
-
  }
 ?>
+
 <form action="singup.php" method="post">
 
     <p>
@@ -66,6 +73,12 @@ else
     <p> <strong>Ваш пароль еще раз</strong></p>
     <input type="password" name="pass_2" value="<?php echo @$data['pass_2']; ?>">
     </p>
+    <select name="lvl_select">
+        <option value="1">Работник</option>
+        <option  value="2">Менеджер</option>
+        <option  value="3">Директор</option>
+    </select>
+
     <p>
         <button type="submit" name="do_signup" >Зарегистрироваться</button>
     </p>
