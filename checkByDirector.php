@@ -2,6 +2,8 @@
 
 require "includes/db.php";
 
+if($_SESSION['logged_user']->lvl == 3) :
+
 // Это будут ссылки на сервер, внутренний или внешний
 
 $query = R::getAll( 'SELECT * FROM forlvl3' );
@@ -20,5 +22,10 @@ foreach ($query as $item):
 
 
 <?php
-endforeach;
-?>
+endforeach;?>
+
+    <? else:
+    echo "Доступ запрещен, т.к. ваш уровень: ";
+    echo $_SESSION['logged_user']->lvl;
+
+endif ?>

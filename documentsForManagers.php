@@ -1,5 +1,8 @@
 <?php
 require "includes/db.php";
+
+if($_SESSION['logged_user']->lvl == 1) :
+
 $data2  = $_POST;
 
 // Это будут ссылки на сервер, внутренний или внешний
@@ -26,3 +29,9 @@ if (isset($data2['post_docs']) ) {
     </p>
 
 </form>
+
+<? else:
+    echo "Доступ запрещен, т.к. ваш уровень: ";
+    echo $_SESSION['logged_user']->lvl;
+
+endif ?>

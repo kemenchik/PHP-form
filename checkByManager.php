@@ -2,6 +2,8 @@
 
 require "includes/db.php";
 
+if($_SESSION['logged_user']->lvl == 2) :
+
 // Это будут ссылки на сервер, внутренний или внешний
 
 $data2  = $_POST;
@@ -37,5 +39,11 @@ if (isset($data2['delete_doc']) ) {
     $text = R::load('forlvl2', $data2['delete_doc']);
     R::hunt('forlvl2', 'id = ?', [$text -> id]);
 }
+?>
 
-        ?>
+
+<? else:
+            echo "Доступ запрещен, т.к. ваш уровень: ";
+            echo $_SESSION['logged_user']->lvl;
+
+      endif ?>
