@@ -32,7 +32,7 @@ if (isset($data['do_login']) )
     }
 }
 ?>
-<form action="login.php" method="post">
+<form action="login" method="post">
 
     <p>
     <p> <strong>Ваш логин</strong></p>

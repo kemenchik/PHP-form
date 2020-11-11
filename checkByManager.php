@@ -11,7 +11,7 @@ $query = R::getAll( 'SELECT * FROM forlvl2' );
 foreach ($query as $item):?>
 
     <?=$item['text']?><br>
-    <form action="checkByManager.php" method="post">
+    <form action="checkByManager" method="post">
 
         <button type="submit" name="post_doc" value="<?=$item['id']?>">Отправить</button>
 

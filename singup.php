@@ -55,7 +55,7 @@ else
  }
 ?>
 
-<form action="singup.php" method="post">
+<form action="singup" method="post">
 
     <p>
        <p> <strong>Ваш логин</strong></p>

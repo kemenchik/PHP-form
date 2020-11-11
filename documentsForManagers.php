@@ -17,7 +17,7 @@ if (isset($data2['post_docs']) ) {
 
 ?>
 
-<form action="documentsForManagers.php" method="post">
+<form action="documentsForManagers" method="post">
 
     <p>
     <p> <strong>Ваш документ</strong></p>
